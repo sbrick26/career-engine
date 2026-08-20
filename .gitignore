@@ -1,0 +1,10 @@
+# generated artifacts (the export contract output)
+dist/
+# data NEVER lives in this repo (privacy + open-source-clean history);
+# it stays in an external CAREER_DATA_DIR (default ../career-corpus)
+*.db
+*.sqlite
+.DS_Store
+*.log
+.env
+.env.*

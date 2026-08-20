@@ -1,0 +1,20 @@
+{
+  "_doc": "Target-role profiles for the ranking engine (scripts/rank.py). The SAME corpus ranks differently per role: each profile weights the five sub-scores and lists keywords that earn an affinity bonus when they appear in a fact's title/tags/detail. Add a role here to rank the resume for a different target. Weights should sum to ~1.0.",
+  "roles": {
+    "default": {
+      "label": "Software / AI Engineer",
+      "weights": { "evidence": 0.25, "impact": 0.30, "distinctiveness": 0.20, "scope": 0.10, "recency": 0.15 },
+      "keywords": ["ai", "ml", "llm", "agent", "agents", "python", "typescript", "react", "next", "aws", "distributed", "pipeline", "api", "infrastructure", "automation", "scale", "performance", "data"]
+    },
+    "ai-engineer": {
+      "label": "AI / ML Engineer",
+      "weights": { "evidence": 0.22, "impact": 0.30, "distinctiveness": 0.26, "scope": 0.08, "recency": 0.14 },
+      "keywords": ["ai", "ml", "llm", "agent", "agents", "rag", "model", "inference", "fine-tune", "embeddings", "pytorch", "python", "prompt", "evaluation", "pipeline", "gpu", "vector"]
+    },
+    "full-stack": {
+      "label": "Full-Stack Engineer",
+      "weights": { "evidence": 0.24, "impact": 0.28, "distinctiveness": 0.18, "scope": 0.12, "recency": 0.18 },
+      "keywords": ["react", "next", "typescript", "node", "api", "frontend", "backend", "database", "aws", "ui", "ux", "tailwind", "performance", "deploy", "ci"]
+    }
+  }
+}
