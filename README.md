@@ -29,3 +29,8 @@ everywhere at once.
 ## Data
 The hub database is NEVER stored in this repo. Set `CAREER_DATA_DIR` (default:
 `../career-corpus`) to a private directory containing `career.db`.
+
+## License
+
+All rights reserved. Published as a portfolio showcase - read and learn from
+it freely; contact the author for any other use. Not open source (yet).
