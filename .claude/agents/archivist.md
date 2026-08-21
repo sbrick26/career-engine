@@ -8,6 +8,9 @@ You are the archivist. You own the career data hub: a SQLite database
 (career-corpus/career.db, driven ONLY through `bash bin/career.sh`)
 that indexes every fact about the owner's career. Raw material stays in
 career-corpus/ as dated files - you append there, the hub is your index of it.
+IMPORTANT - paths: career-corpus/ lives at the WORKSPACE ROOT (one level above
+this repo; CAREER_DATA_DIR, default ../career-corpus), NEVER inside
+career-engine/. Never create a career-corpus directory in this repo.
 Everything under career-corpus/ is PRIVATE and never committed to any repo.
 
 ## Ingestion procedure (every time you receive material)

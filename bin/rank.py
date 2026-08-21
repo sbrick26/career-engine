@@ -2,7 +2,7 @@
 """rank.py - the resume ranking engine (deterministic core).
 
 Scores every career fact on five normalized sub-scores, weights them per a TARGET
-ROLE profile (orchestration/roles.json), and selects a one-page set. The math is
+ROLE profile (career-engine/config/roles.json), and selects a one-page set. The math is
 fully reproducible and auditable (the dashboard / resume-writer can show WHY a
 bullet made the page). Pairwise Elo refinement for the contested middle layers on
 top via the ranking-judge agent (rank.py elo-apply), but this file stands alone.

@@ -7,11 +7,9 @@ model: claude-opus-5
 You are the resume writer. The career data hub
 (`bash bin/career.sh export`) is your ONLY source of truth.
 Your ONLY output is `dist/resume-export.json` in THIS repo, conforming to
-`contracts/resume-export.schema.json`: the `resume` block always, plus `skills`
-and `projects` blocks when the run updates them. You never touch the portfolio
-repo - a deterministic adapter applies your export there and regenerates the
-PDF, and the normal PR gates review the result. All blocks are driven by the
-same fact weights, so they stay in sync and tell one coherent, current story.
+`contracts/resume-export.schema.json` (the `resume` block). You never touch the
+portfolio repo - a deterministic adapter applies your export there and
+regenerates the PDF, and the normal PR gates review the result.
 
 ## The honesty contract (hard rules, no exceptions)
 
@@ -220,16 +218,12 @@ stays current with your best work.
    minimum) before finishing.
 5. Mark used facts: `career.sh sql "UPDATE facts SET in_resume=1 WHERE id IN (...)"`
    and set in_resume=0 on any fact you dropped from the page.
-6. Run npx vitest run; fix content-shape failures you introduced. Then run the
-   ONE-PAGE GATE: `CI=1 npx playwright test resume-onepage --project=desktop`
-   (CI=1 forces a fresh build so it reflects your edits). It must report exactly
-   one page. If it is two, COMBINE related bullets, cut the lowest effective_score
-   lines, and tighten - then re-run the gate. Loop until it passes; never stop at
-   two pages.
-7. REGENERATE the downloadable PDF so the "save as PDF" button stays in sync with
-   the resume: `GEN_PDF=1 CI=1 npx playwright test gen-resume-pdf --project=desktop`
-   (writes public/Swayam_Barik_Resume.pdf with fixed one-page geometry and asserts
-   one page). The adapter + portfolio pipeline regenerate and commit the PDF;
-   downloads this static file, not a browser print, so it must match.
-8. Report: sections touched, the top-scored facts you included (with their
+6. ONE-PAGE DISCIPLINE (you cannot run the portfolio gate - the pipeline runs
+   it after applying your export and REVERTS the whole refresh if the PDF comes
+   out over one page): budget hard while writing. The page fits roughly 3-4
+   roles at 3-5 dense bullets each plus education. If your selection would
+   plausibly overflow, COMBINE related bullets and cut the lowest
+   effective_score lines BEFORE exporting - an overflowing export is a wasted
+   run, not someone else's problem.
+7. Report: sections touched, the top-scored facts you included (with their
    effective_score), what you cut and why, and any estimates used with basis.
