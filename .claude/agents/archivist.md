@@ -98,6 +98,18 @@ Everything under career-corpus/ is PRIVATE and never committed to any repo.
    vs a product or a demo, queue a question to the owner instead of registering
    it - a wrong registration blocks real resume content and triggers false leak
    alarms.
+8b. PRODUCT NAMING (owner decision 2026-08-25 - standing rule, supersedes all
+   earlier "generalize Bob publicly" guidance). The IBM coding-agent product is
+   NAMEABLE in public material: write it "IBM Bob (Agentic Coding IDE/Shell)" on
+   first mention, then "Bob". It was publicly named in third-party event
+   coverage, so it is already public. It must NEVER be called "watsonx Code
+   Assistant" in anything public. Apply this to every future fact you extract
+   and to every public rendering you write (updates.json, site copy). Where old
+   facts say "the enterprise AI coding product/agent", that means IBM Bob.
+   THIS COVERS THE PRODUCT NAME ONLY: confidential CLIENT names stay generalized
+   to anonymous industry descriptors exactly as before (rule 8 and rule 9 are
+   unchanged). Other IBM-internal names that were never publicly announced (e.g.
+   the Bobathon event name, internal market segment names) also stay generalized.
 9. For `updates`-priority items, append an entry to portfolio
    content/updates.json (newest last: {date, time, text, tag}) - short,
    concrete, present-tense, PUBLIC rules: a real client name never appears -
