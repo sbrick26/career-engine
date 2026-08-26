@@ -1,76 +1,120 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "resume-export",
-  "description": "The ONLY artifact career-engine hands to consumers (the portfolio site today). The engine owns facts, ranking, and writing; consumers own rendering. Every claim inside traces to a fact row in the private career hub per the honesty contract.",
-  "type": "object",
-  "required": [
-    "version",
-    "generated",
-    "resume"
-  ],
-  "properties": {
-    "version": {
-      "type": "integer",
-      "minimum": 1
-    },
-    "generated": {
-      "type": "string",
-      "description": "ISO timestamp of the writing run"
-    },
-    "resume": {
-      "type": "object",
-      "required": [
-        "summary",
-        "experience",
-        "education"
-      ],
-      "properties": {
-        "summary": {
-          "type": "string",
-          "minLength": 1
-        },
-        "experience": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/$defs/entry"
-          }
-        },
-        "education": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/entry"
-          }
-        }
-      }
-    }
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "resume-export",
+ "description": "The ONLY artifact career-engine hands to consumers (the portfolio site today). The engine owns facts, ranking, and writing; consumers own rendering. Every claim inside traces to a fact row in the private career hub per the honesty contract.",
+ "type": "object",
+ "required": [
+  "version",
+  "generated",
+  "resume"
+ ],
+ "properties": {
+  "version": {
+   "type": "integer",
+   "minimum": 1
   },
-  "$defs": {
-    "entry": {
+  "generated": {
+   "type": "string",
+   "description": "ISO timestamp of the writing run"
+  },
+  "resume": {
+   "type": "object",
+   "required": [
+    "summary",
+    "experience",
+    "education"
+   ],
+   "properties": {
+    "summary": {
+     "type": "string",
+     "description": "headline paragraph; empty string = no summary section rendered"
+    },
+    "experience": {
+     "type": "array",
+     "minItems": 1,
+     "items": {
+      "$ref": "#/$defs/entry"
+     }
+    },
+    "education": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/entry"
+     }
+    },
+    "projects": {
+     "type": "array",
+     "description": "optional: one-line project entries rendered in a Projects section",
+     "items": {
       "type": "object",
       "required": [
-        "title",
-        "points"
+       "name",
+       "desc"
       ],
+      "additionalProperties": false,
       "properties": {
-        "title": {
-          "type": "string",
-          "minLength": 1
-        },
-        "org": {
-          "type": "string"
-        },
-        "when": {
-          "type": "string"
-        },
-        "points": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 220
-          }
-        }
+       "name": {
+        "type": "string",
+        "maxLength": 60
+       },
+       "desc": {
+        "type": "string",
+        "maxLength": 620
+       }
       }
+     }
+    },
+    "skillsLines": {
+     "type": "array",
+     "description": "optional: resume-scoped skills lines (label + comma list); the PDF uses these instead of the site skills groups when present",
+     "items": {
+      "type": "object",
+      "required": [
+       "label",
+       "items"
+      ],
+      "additionalProperties": false,
+      "properties": {
+       "label": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "items": {
+        "type": "string",
+        "maxLength": 500
+       }
+      }
+     }
     }
+   }
   }
+ },
+ "$defs": {
+  "entry": {
+   "type": "object",
+   "required": [
+    "title",
+    "points"
+   ],
+   "properties": {
+    "title": {
+     "type": "string",
+     "minLength": 1
+    },
+    "org": {
+     "type": "string"
+    },
+    "when": {
+     "type": "string"
+    },
+    "points": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "maxLength": 620
+     }
+    }
+   }
+  }
+ }
 }
