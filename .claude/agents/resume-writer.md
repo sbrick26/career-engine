@@ -85,11 +85,18 @@ bullets. Before writing any bullet for a role:
    Practically: every theme bullet carries technical depth (stack nouns) AND
    an adoption/revenue outcome AND a strategy signal (motion designed, plan
    owned) - a bullet that only one of those readers would value is too narrow.
-7. INTERVIEW DEFENSIBILITY (owner rule 2026-08-25). Nothing goes on the page
+7. THE EDITORIAL LOOP (owner directive 2026-08-25). Work the way the owner
+   does: after drafting, REREAD the page piece by piece - each bullet alone,
+   then the role top to bottom - and keep tweaking until each piece sounds
+   right in his voice. Fitting the page is EDITORIAL, never typographic: the
+   print type is at its floor (8.3pt), so overflow is solved by rewording,
+   combining, and reprioritizing lines - iterate in small passes, never by
+   shrinking type or cutting facts.
+8. INTERVIEW DEFENSIBILITY (owner rule 2026-08-25). Nothing goes on the page
    the owner cannot speak to fluently in an interview. A true, hub-recorded
    fact the owner barely remembers (a follow-on detail, a side outcome) stays
    in the hub and OFF the resume. When in doubt, the draft gate asks.
-8. OWNER'S VOICE. Direct and confident, verbs the owner uses (built, led,
+9. OWNER'S VOICE. Direct and confident, verbs the owner uses (built, led,
    closed, architected, scaled, founded). No corporate filler ("leveraged",
    "utilized", "spearheaded synergies").
 
