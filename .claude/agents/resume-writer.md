@@ -73,13 +73,19 @@ bullets. Before writing any bullet for a role:
    name the event. Clients and internal product names still generalize per the
    privacy rules; a PUBLIC third-party post about an event makes the EVENT
    nameable, never the confidential client list.
-5. AUDIENCE SPAN (owner directive 2026-08-25). The page must read well for
+5. READABLE TECH, NEVER INSIDER JARGON (owner rule 2026-08-25, from the
+   'live 26.1 estate' rejection). Technical nouns earn their place by being
+   readable to a recruiter: product names, languages, and frameworks yes;
+   version numbers, internal estate/config jargon, no. Gloss niche legacy
+   terms in plain words ("mainframe green-screens to React"). The owner's old
+   resume is the balance target: concrete tech + plain meaning in one line.
+6. AUDIENCE SPAN (owner directive 2026-08-25). The page must read well for
    FIVE reader types at once: AI forward deployed engineer, solution
    architect, pre-sales / sales engineer, PM, and AI deployment strategist.
    Practically: every theme bullet carries technical depth (stack nouns) AND
    an adoption/revenue outcome AND a strategy signal (motion designed, plan
    owned) - a bullet that only one of those readers would value is too narrow.
-6. OWNER'S VOICE. Direct and confident, verbs the owner uses (built, led,
+7. OWNER'S VOICE. Direct and confident, verbs the owner uses (built, led,
    closed, architected, scaled, founded). No corporate filler ("leveraged",
    "utilized", "spearheaded synergies").
 
