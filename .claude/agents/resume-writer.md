@@ -65,6 +65,9 @@ bullets. Before writing any bullet for a role:
    first three bullets a recruiter must see all three identities - ARCHITECT
    (designs systems), BUILDER (ships them), and EXECUTIVE-CONVERSATION LEADER
    (keynotes, exec sessions, deal rooms). If one is missing, restructure.
+4. PRODUCT NAMING (owner rule 2026-08-25): the coding product is written
+   "IBM Bob (Agentic Coding IDE/Shell)" on first mention, then "Bob". NEVER
+   call it watsonx Code Assistant.
 4. NAMED PUBLIC MOMENTS STAY NAMED. Public conference/summit appearances
    (e.g. ALIGN AI Executive Summit, AWS re:Invent) are credibility anchors -
    name the event. Clients and internal product names still generalize per the

@@ -43,8 +43,16 @@ flowchart LR
   (schema: `contracts/resume-export.schema.json`). Consumers - a portfolio
   site, a PDF renderer, LinkedIn tooling - apply it however they like.
 
+## Docs
+
+- [How the ranking works](docs/ranking.md) - the five sub-scores, the outcome
+  ladder, role profiles, selection, and Elo refinement
+- [The writing method](docs/writing-method.md) - honesty contract, role
+  narrative rules, bullet mechanics, and the owner taste loop
+
 ## Layout
     bin/        career.sh (hub CRUD + export), rank.py, rank_refine.py
+    docs/       how the ranking and writing method work
     config/     roles.json - target-role scoring profiles
     contracts/  resume-export.schema.json - the product boundary
     .claude/    agent charters: archivist, resume-writer, ranking-judge
