@@ -143,11 +143,36 @@ def subscores(facts):
         raw_impact[f["id"]] = best
     max_log = max(raw_impact.values()) or 1.0
 
+    # Qualitative outcome ladder (2026-08-25 fix): evidence and impact used to
+    # derive ONLY from numeric metrics, which structurally buried the facts a
+    # forward-deployed story runs on - closed deals, GA ships, official
+    # adoption, competition wins, public keynotes. Those are verifiable
+    # outcomes with real magnitude even when no number is attached. Numeric
+    # metrics still dominate when present (max of both paths).
+    OUTCOME_TIERS = (
+        (0.85, ("closed a", "closed deal", "deal closed", "won 1st", "first place",
+                "1st place", "official internal", "official release", "to ga",
+                "shipped to ga", " ga)", "ga milestone", "officially adopted",
+                "being adopted", "adopted as an official")),
+        (0.6,  ("main speaker", "keynote", "executive summit", "public post",
+                "publicly", "press", "conference talk", "invited talk")),
+        (0.35, ("pilot", "poc delivered", "demo delivered", "in production",
+                "deployed to production", "live demo")),
+    )
+    def outcome_tier(f):
+        text = " ".join(str(f.get(k) or "") for k in ("title", "detail", "action", "impact")).lower()
+        for score, marks in OUTCOME_TIERS:
+            if any(m in text for m in marks):
+                return score
+        return 0.0
+
     out = {}
     for f in facts:
         fid = f["id"]
         mets = parse_metrics(f.get("metrics"))
-        # evidence
+        tier = outcome_tier(f)
+        # evidence: direct metric > any metric value > bare metric > outcome
+        # markers (a closed deal or GA ship IS evidence) > nothing
         if any(isinstance(m, dict) and m.get("basis") == "direct" for m in mets):
             ev = 1.0
         elif any(isinstance(m, dict) and m.get("value") for m in mets):
@@ -156,11 +181,16 @@ def subscores(facts):
             ev = 0.5
         else:
             ev = 0.15
+        if tier >= 0.6:
+            ev = max(ev, 0.8)
+        elif tier > 0:
+            ev = max(ev, 0.5)
         ev = min(1.0, ev + 0.05 * max(0, len(mets) - 1))
-        # impact
+        # impact: numeric magnitude, floored by the outcome ladder
         imp = raw_impact[fid] / max_log if max_log else 0.2
         if not mets:
             imp = min(imp, 0.2)
+        imp = max(imp, tier)
         # distinctiveness: tag rarity + archivist weight prior
         tags = [t.lower() for t in (json.loads(f["tags"]) if f.get("tags") else [])]
         rarity = sum(1.0 - (tag_count.get(t, 1) / n) for t in tags) / len(tags) if tags else 0.4

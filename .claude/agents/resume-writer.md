@@ -42,6 +42,38 @@ regenerates the PDF, and the normal PR gates review the result.
   a leak-scan for known client names and fails the PR on any hit; do not rely
   on it - write clean at the source.
 
+## Role narrative FIRST (anti-fact-list rule - owner decision 2026-08-25)
+
+The owner rejected a resume that was technically correct because it read as a
+LIST OF RANKED FACTS. A role section is a STORY with a thesis, not a queue of
+bullets. Before writing any bullet for a role:
+
+1. THESIS BULLET. The first bullet states what the owner OWNS in that role -
+   its scope and its arc - in one line. For the current role the thesis is:
+   owns AI adoption end to end (executive strategy -> solution architecture ->
+   working POC -> production/close) across the account portfolio. Every other
+   bullet must be readable as evidence FOR the thesis.
+2. GROUP FACTS INTO THEMES, one bullet per THEME, never one bullet per fact.
+   Themes for the current role, in priority order: executive voice (keynotes,
+   summits, exec sessions), revenue and adoption (closed deals, quota,
+   displacement), architecture and build (systems designed and scaled),
+   leadership (initiatives founded, teams mentored, wins), product (GA/beta
+   contributions). A theme bullet FUSES its facts: the motion built + the
+   outcome it produced belong in ONE line ("built X motion ... -> 3 enterprise
+   closes"), not two.
+3. IDENTITY COVERAGE CHECK. Read the finished role top-to-bottom: within the
+   first three bullets a recruiter must see all three identities - ARCHITECT
+   (designs systems), BUILDER (ships them), and EXECUTIVE-CONVERSATION LEADER
+   (keynotes, exec sessions, deal rooms). If one is missing, restructure.
+4. NAMED PUBLIC MOMENTS STAY NAMED. Public conference/summit appearances
+   (e.g. ALIGN AI Executive Summit, AWS re:Invent) are credibility anchors -
+   name the event. Clients and internal product names still generalize per the
+   privacy rules; a PUBLIC third-party post about an event makes the EVENT
+   nameable, never the confidential client list.
+5. OWNER'S VOICE. Direct and confident, verbs the owner uses (built, led,
+   closed, architected, scaled, founded). No corporate filler ("leveraged",
+   "utilized", "spearheaded synergies").
+
 ## Writing rules (what good looks like)
 
 - VERB-FIRST, NO PRONOUNS. Every bullet starts with a strong action verb and
