@@ -127,6 +127,65 @@
     "stakeholder",
     "lifecycle"
    ]
+  },
+  "sa-presales": {
+   "label": "Solution Architect / Pre-Sales Engineer",
+   "weights": {
+    "evidence": 0.2,
+    "impact": 0.26,
+    "distinctiveness": 0.2,
+    "scope": 0.2,
+    "recency": 0.14
+   },
+   "keywords": [
+    "architecture",
+    "architected",
+    "poc",
+    "pilot",
+    "discovery",
+    "solutioning",
+    "pre-sales",
+    "quota",
+    "displacement",
+    "competitive",
+    "demo",
+    "workshop",
+    "integration",
+    "mcp",
+    "orchestration",
+    "enterprise",
+    "stakeholder",
+    "roi"
+   ]
+  },
+  "ai-strategist": {
+   "label": "AI Deployment Strategist / PM",
+   "weights": {
+    "evidence": 0.18,
+    "impact": 0.3,
+    "distinctiveness": 0.18,
+    "scope": 0.2,
+    "recency": 0.14
+   },
+   "keywords": [
+    "adoption",
+    "strategy",
+    "governance",
+    "executive",
+    "roadmap",
+    "post-sales",
+    "engagement plan",
+    "best practice",
+    "guides",
+    "enablement",
+    "initiative",
+    "metrics",
+    "roi",
+    "lifecycle",
+    "workshop",
+    "prd",
+    "a/b"
+   ]
   }
  }
 }
