@@ -3,6 +3,30 @@
 An agent-driven career memory that keeps your resume honest, current, and
 everywhere at once.
 
+```mermaid
+flowchart LR
+    I(["Daily interview
+    (owner, via Telegram)"]) --> A["Archivist agent
+    atomic facts, merged
+    never duplicated"]
+    A --> H[("Career hub
+    private SQLite + FTS
+    outside this repo")]
+    H --> Q["Open questions
+    (missing numbers get asked,
+    never invented)"] --> I
+    H --> R["rank.py
+    evidence, impact, outcomes,
+    scope, recency - per target role"]
+    R --> W["Resume-writer agent
+    honesty contract +
+    narrative rules"]
+    W --> E["dist/resume-export.json
+    (the one product boundary)"]
+    E --> C1(["Portfolio site"])
+    E --> C2(["One-page PDF"])
+```
+
 - **Facts, not prose.** Everything you have done lives as structured fact rows
   (action, impact, metrics with provenance, tags, weights) in a local SQLite
   hub. An archivist agent ingests new material through periodic interviews.
